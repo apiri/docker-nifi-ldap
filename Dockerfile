@@ -7,7 +7,7 @@ ARG NIFI_VERSION=1.3.0
 
 ENV NIFI_BASE_DIR /opt/nifi
 ENV NIFI_HOME $NIFI_BASE_DIR/nifi-${NIFI_VERSION}
-ENV NIFI_BINARY_URL http://mirror.cc.columbia.edu/pub/software/apache/nifi/${NIFI_VERSION}/nifi-${NIFI_VERSION}-bin.tar.gz
+ENV NIFI_BINARY_URL https://archive.apache.org/dist/nifi/${NIFI_VERSION}/nifi-${NIFI_VERSION}-bin.tar.gz
 
 
 # Setup NiFi user
