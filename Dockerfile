@@ -20,10 +20,10 @@ ADD    resources/nifi-toolkit-${NIFI_VERSION}-bin.tar.gz /opt/nifi/
 
 # Download, validate, and expand Apache NiFi binary.
 RUN curl -fSL $NIFI_BINARY_URL -o $NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz \
-	&& echo "$(curl $NIFI_BINARY_URL.sha256) *$NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz" | sha256sum -c - \
-	&& tar -xvzf $NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz -C $NIFI_BASE_DIR \
-	&& rm $NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz \
-	&& chown -R nifi:nifi ${NIFI_HOME} \
+  && echo "$(curl $NIFI_BINARY_URL.sha256) *$NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz" | sha256sum -c - \
+  && tar -xvzf $NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz -C $NIFI_BASE_DIR \
+  && rm $NIFI_BASE_DIR/nifi-${NIFI_VERSION}-bin.tar.gz \
+  && chown -R nifi:nifi ${NIFI_BASE_DIR} \
   && apt-get update \
   && apt-get install -y jq xmlstarlet
 
