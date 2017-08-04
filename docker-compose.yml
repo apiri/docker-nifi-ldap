@@ -55,7 +55,7 @@ services:
     image: osixia/openldap:1.1.9
     hostname: ldap
     volumes:
-      - /Users/apiri/Development/docker-data/ldap/certs:/container/service/slapd/assets/certs
+      - /container/service/slapd/assets/certs
     ports:
       - 6389:389
       - 6636:636
@@ -71,17 +71,3 @@ services:
       # LDAP_TLS_CRT_FILENAME: my-ldap.crt
       # LDAP_TLS_KEY_FILENAME: my-ldap.key
       # LDAP_TLS_CA_CRT_FILENAME: the-ca.crt
-
-  # ldapadmin:
-  #   image: osixia/phpldapadmin:0.7.0
-  #   ports:
-  #     - 6480:80
-  #     - 6443:443
-  #   environment:
-  #     PHPLDAPADMIN_LDAP_HOSTS: ldap
-
-# volumes:
-#   ldap-database-volume: /Users/apiri/Development/docker-data/ldap/database
-  # ldap-config-volume: /Users/apiri/Development/docker-data/ldap/config
-  # ldap-data-volume: /Users/apiri/Development/docker-data/ldap/data
-  # ldap-cert-volume: /Users/apiri/Development/docker-data/ldap/certs
